@@ -1,0 +1,29 @@
+<html>
+<body>
+<h3>ID: {{newdata.stid}}</h3><br>
+<h3>Name: {{newdata.stname}}</h3><br>
+<h3>Email: {{newdata.stemail}}</h3><br>
+<h3>Grade: {{newdata.stgrade}}</h3><br>
+<h4>Courses Registered</h4><br>
+<table border="1">
+    <tr>
+        <th>Course ID</th>
+        <th>Course Name</th>
+        <th>Course Credits</th>
+    </tr>
+    {% for cdata in data %}
+ <tr>
+    <td><center>{{cdata.courseno.cid}}</center></td>
+     <td><center>{{cdata.courseno.cname}}</center></td>
+     <td><center>{{cdata.courseno.credits}}</center></td>
+</tr>
+    {% endfor %}
+</table>
+<br>
+<a href="{% url 'stdisplay' %}">Student Records</a> 
+<br>
+<br>
+<a href="{% url 'stsearch' %}">Search New Record</a>  
+<hr/>
+</body>
+</html>

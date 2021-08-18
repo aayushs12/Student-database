@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Courses</title>
+</head>
+<body>
+    <center><h1>Courses</h1>
+    <hr/>
+    <br>
+    <table border="1">
+        <tr>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Course credits</th>
+        </tr>
+    {% for displayst in course %}
+     <tr>
+         <td><center>{{displayst.cid}}</center></td>
+         <td><center>{{displayst.cname}}</center></td>
+         <td><center>{{displayst.credits}}</center></td>
+         <td><center><a href="/cdetail/{{displayst.cid}}">View Course Details</a></center></td>
+    </tr>
+    {% endfor %}
+    </table>
+    <br>
+    <a href="{% url 'stdisplay' %}">Student Records</a> 
+    </center>
+
+</body>
+</html>

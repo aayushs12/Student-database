@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Courses</title>
+</head>
+<body>
+    <center><h1>Students List</h1>
+    <hr/>
+    <br>
+    <table border="1">
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Email</th>
+        </tr>
+    {% for check2 in newp %}
+     <tr>
+        <td><center>{{check2.studentid.stid}}</center></td>
+         <td><center>{{check2.studentid.stname}}</center></td>
+         <td><center>{{check2.studentid.stemail}}</center></td>
+    </tr>
+    {% endfor %}
+    </table>
+    <br>
+    <a href="{% url 'stdisplay' %}">Student Records</a> 
+    <br>
+    <a href="{% url 'cdisplay' %}">All Courses</a> 
+    </center>
+
+</body>
+</html>

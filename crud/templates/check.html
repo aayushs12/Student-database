@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Check</title>
+</head>
+<body>
+    <center><h1>title</h1>
+    <hr/>
+    <br>
+    <table border="1">
+        <tr>
+            <th>Student ID</th>
+            <th>Course ID</th>
+        </tr>
+        {% for check2 in check %}
+        <tr>
+         <td><center>{{check2.studentid.stid}}</center></td>
+         <td><center>{{check2.courseno.cid}}</center></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{% url 'stdisplay' %}">Student Records</a> 
+    </center>
+
+</body>
+</html>

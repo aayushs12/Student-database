@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Index</title>
+</head>
+<body>
+    <center><h1>Student</h1>
+    <hr/>
+    <a href="{% url 'stinsert'%}">Add Student Record</a>
+    <hr/>
+    <a href="{% url 'stsearch'%}">Search Record</a>
+    <hr/>
+    <a href="{% url 'cdisplay'%}">View Courses</a>
+    <hr/>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Grade</th>
+        </tr>
+    {% for displayst in crudst %}
+     <tr>
+         <td><center>{{displayst.stid}}</center></td>
+         <td><center>{{displayst.stname}}</center></td>
+         <td><center>{{displayst.stemail}}</center></td>
+         <td><center>{{displayst.stgrade}}</center></td>
+         <td><center><a href="/Edit/{{displayst.stid}}">Edit</a></center></td>
+         <td><center><a href="/Delete/{{displayst.stid}}">Delete</a></center></td>
+        </tr>
+    {% endfor %}
+    </table>
+    </center>
+
+</body>
+</html>

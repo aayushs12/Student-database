@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Search</title>
+</head>
+<body>
+    <center>
+    <h1>Search Record</h1>
+    <h2>Enter Student ID</h2>
+<script>
+    function changeText2() {
+        var userInput = document.getElementById('userInput').value;
+        var lnk = document.getElementById('lnk');
+        lnk.href = "http://127.0.0.1:8000/data/" + userInput;
+        window.location = "http://127.0.0.1:8000/data/" + userInput;
+    }
+</script>  
+<a href="" id=lnk></a>
+<br>
+<input type='text' id='userInput' value='' />
+<br>
+<input type='button' onclick='changeText2()' value='Submit' /> 
+</center>
+</body>
+</html>

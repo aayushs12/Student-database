@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Update Record</title>
+</head>
+<body>
+    <center>
+        <h1>Update Record</h1>
+        <h2>Student ID is {{crudst.stid}}</h2>
+        <hr/>
+        <form method="POST" action="/Update/{{crudst.stid}}">
+        {% csrf_token %}
+            <table border="1">
+            <tr><td>Student Name</td>
+                <td><input type="text" name="stname" value="{{crudst.stname}}"></td></tr>
+               <tr> <td>Student Email</td>
+                <td><input type="text" name="stemail" value="{{crudst.stemail}}"></td></tr>
+                <tr><td>Student Grade</td>
+                <td><input type="text" name="stgrade" value="{{crudst.stgrade}}"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Update Student Record">
+        <a href="{% url 'stdisplay' %}">Student Records</a>  
+    <hr/>
+     {% if messages %}
+    {% for result in messages %}
+    <b style="color:green;">{{result}}</b>
+    {% endfor %}
+    {% endif %}
+    </form>
+    </center>
+</body>
+</html>
