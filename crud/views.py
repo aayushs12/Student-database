@@ -8,7 +8,7 @@ from django.template import Context, loader
 
 def stdisplay(request):
     results=crudst.objects.all()
-    return render(request,"Index.html",{"crudst":results})
+    return render(request,"index.html",{"crudst":results})
 def stinsert(request):
     if request.method=="POST":
         if request.POST.get('stname') and request.POST.get('stemail') and request.POST.get('stgrade'):
